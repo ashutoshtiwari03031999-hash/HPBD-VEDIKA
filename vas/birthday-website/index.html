@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday VEDIKA ❤️</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background falling hearts canvas -->
+  <canvas id="bgHeartsCanvas" class="bg-hearts-canvas" aria-hidden="true"></canvas>
+
+  <!-- Decorative hearts -->
+    <div class="heart-deco h1">❤</div>
+    <div class="heart-deco h2">❤</div>
+    <div class="heart-deco h3">❤</div>
+    <div class="heart-deco h4">❤</div>
+    <div class="heart-deco h5">❤</div>
+  </div>
+
+  <div id="introOverlay" class="intro-overlay" aria-hidden="false">
+    <div class="intro-inner">
+      <div class="intro-heart">❤</div>
+      <div class="intro-text">
+        <div class="intro-apology" id="introApology"></div>
+        <div class="intro-from">— On behalf of <strong>Ashutosh</strong></div>
+      </div>
+      <button id="skipIntro" class="btn btn-ghost">Skip</button>
+    </div>
+  </div>
+  <div class="bg">
+    <div class="sparkle s1"></div>
+    <div class="sparkle s2"></div>
+    <div class="sparkle s3"></div>
+    <div class="sparkle s4"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="heart">♥</span>
+      <span>Happy Birthday VEDIKA</span>
+    </div>
+    <div class="top-actions">
+      <button id="voiceToggle" class="btn btn-ghost" type="button" aria-pressed="false">Enable Voice</button>
+      <button id="musicToggle" class="btn btn-music" type="button" aria-pressed="false">Play Music</button>
+      <button id="toggleVfxBtn" class="btn btn-ghost" type="button" aria-pressed="false">VFX On</button>
+      <button id="surpriseBtn" class="btn btn-primary" type="button">Surprise</button>
+      <button id="openCardBtn" class="btn btn-primary" type="button">Open Card</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Happy Birthday, Vedika 🎂</h1>
+        <p class="sub">A small page, big love — made just for you. ❤️</p>
+        <div class="countdown" role="timer" aria-label="Countdown"></div>
+        <div class="cta-row">
+          <button id="showMessageBtn" class="btn btn-ghost" type="button">Show Birthday Message</button>
+          <button id="openGalleryBtn" class="btn btn-ghost" type="button">View Photos</button>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <!-- DALL·E generated portrait (main focus) -->
+        <div class="dall-frame" id="dallFrame">
+          <div class="dall-bg-shimmer"></div>
+          <div class="vfx-card" id="vfxCard">
+            <img id="dallImg" class="dall-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop" alt="Vedika smile" />
+            <div class="vfx-overlay" aria-hidden="true"></div>
+            <div class="dall-frame-decor"></div>
+          </div>
+          <p class="dall-caption">You are beautiful, Vedika! 😊❤️</p>
+        </div>
+
+        <!-- Gift Box with Pendant -->
+        <div class="gift-box-container">
+          <div class="gift-box" id="giftBox">
+            <div class="gift-top"></div>
+            <div class="gift-front">
+              <div class="gift-ribbon"></div>
+            </div>
+            <div class="gift-open-hint">Click to open →</div>
+          </div>
+          <div class="pendant-reveal" id="pendantReveal">
+            <div class="pendant"></div>
+            <div class="pendant-shine"></div>
+            <p class="pendant-msg">For you, my love ✨</p>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section id="message" class="card hidden" aria-live="polite">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="badge">For you, always</div>
+          <h2>Birthday Wish</h2>
+          <div class="apology">Sorry I'm late, Vedika — please forgive me 💜</div>
+        </div>
+        <p class="wish">
+          Happy Birthday, my love VEDIKA ❤️
+          <br />
+          You make my days better just by being you.
+          <br />
+          I’m grateful for every laugh, every memory, and every moment we share.
+          <br />
+          May your year be full of happiness, peace, and everything your heart desires.
+          <br /><br />
+          I love you more than words can say.
+          <span class="signature">— Your Boyfriend</span>
+        </p>
+
+        <div class="card-actions">
+          <button id="celebrateBtn" class="btn btn-primary" type="button">Celebrate 🎉</button>
+          <button id="closeMessageBtn" class="btn btn-ghost" type="button">Close</button>
+        </div>
+
+        <div class="love-stats" aria-label="Love stats">
+          <div class="stat">
+            <div class="num" data-count="365">0</div>
+            <div class="lbl">Days of love (estimate)</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="12">0</div>
+            <div class="lbl">Months you light up</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="999">0</div>
+            <div class="lbl">Reasons to smile</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery hidden">
+      <div class="section-head">
+        <h2>Photo Gallery</h2>
+        <p>Tap a photo to view.</p>
+      </div>
+
+      <div class="gallery-grid" role="list">
+        <figure class="gitem" role="listitem">
+          <img src="assets/gf-1.jpg" alt="Girlfriend photo 1" />
+          <figcaption>Our moments</figcaption>
+        </figure>
+        <figure class="gitem" role="listitem">
+          <img src="assets/gf-2.jpg" alt="Girlfriend photo 2" />
+          <figcaption>Your smile</figcaption>
+        </figure>
+        <figure class="gitem" role="listitem">
+          <img src="assets/gf-3.jpg" alt="Girlfriend photo 3" />
+          <figcaption>My favorite you</figcaption>
+        </figure>
+      </div>
+
+      <div class="lightbox hidden" id="lightbox" aria-modal="true" role="dialog" aria-label="Photo viewer">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close viewer">✕</button>
+        <img id="lightboxImg" alt="Expanded photo" />
+      </div>
+
+      <div class="gallery-actions">
+        <button id="closeGalleryBtn" class="btn btn-ghost" type="button">Back</button>
+      </div>
+    </section>
+
+    <section class="footer" aria-label="Footer">
+      <div class="footer-card">
+        <div class="footer-title">Made with ❤️ for Vedika</div>
+        <div class="footer-sub">The portrait image updates automatically from the web. Add <code>assets/bday.mp3</code> for background music. Click the gift box to reveal your surprise gift!</div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto" autoplay loop></audio>
+  <canvas id="vfxCanvas" class="vfx-canvas" aria-hidden="true"></canvas>
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
